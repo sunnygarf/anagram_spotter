@@ -11,36 +11,35 @@
 
 void clean(char *str)
 {
-  bool debug = true;
-
   char cleaned[ENOUGH];
-  int index = 0;
+  filter_lexicographical(cleaned, str);
+  sort_lexicographical(cleaned);
+  strcpy(str, cleaned);
+}
 
-  for (int i = 0; i < strlen(str); i++) {
-    if (isalpha(str[i])) {
-      cleaned[index] = tolower(str[i]);
+void filter_lexicographical(char *filtered, char *raw)
+{
+  int index = 0;
+  for (int i = 0; i < strlen(raw); i++) {
+    if (isalpha(raw[i])) {
+      filtered[index] = tolower(raw[i]);
       index++;
     }
   }
-  cleaned[index] = '\0';
+  filtered[index] = '\0';
+}
 
-  if (debug)
-    printf("cleaned: %s\n", cleaned);
-
-  for (int i = 0; i < strlen(cleaned); i++) {
-    for (int j = 0; j < strlen(cleaned); j++) {
-      if (cleaned[i] < cleaned[j]) {
-        char temp = cleaned[i];
-        cleaned[i] = cleaned[j];
-        cleaned[j] = temp;
+void sort_lexicographical(char *str)
+{
+  for (int i = 0; i < strlen(str); i++) {
+    for (int j = 0; j < strlen(str); j++) {
+      if (str[i] < str[j]) {
+        char temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
       }
     }
   }
-
-  if (debug)
-    printf("cleaned: %s\n", cleaned);
-
-  strcpy(str, cleaned);
 }
 
 int compare(char *str1, char *str2)
