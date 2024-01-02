@@ -6,4 +6,6 @@
 #ifndef SPOTTER_H
 #define SPOTTER_H
 
+void clean(char *str);
+
 #endif

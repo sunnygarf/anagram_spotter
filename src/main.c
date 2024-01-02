@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include "main.h"
 #include "parser.h"
+#include "spotter.h"
 
 int main(void)
 {
@@ -18,6 +19,13 @@ int main(void)
   if (debug) {
     printf("s1: %s", s1);
     printf("s2: %s", s2);
+  }
+
+  clean(s1);
+  clean(s2);
+  if (debug) {
+    printf("s1: %s\n", s1);
+    printf("s2: %s\n", s2);
   }
 
   return 0;
