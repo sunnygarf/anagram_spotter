@@ -10,6 +10,4 @@
 
 #define ENOUGH 30
 
-extern bool debug;
-
 #endif
