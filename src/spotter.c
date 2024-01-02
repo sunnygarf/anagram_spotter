@@ -27,5 +27,18 @@ void clean(char *str)
   if (debug)
     printf("cleaned: %s\n", cleaned);
 
+  for (int i = 0; i < strlen(cleaned); i++) {
+    for (int j = 0; j < strlen(cleaned); j++) {
+      if (cleaned[i] < cleaned[j]) {
+        char temp = cleaned[i];
+        cleaned[i] = cleaned[j];
+        cleaned[j] = temp;
+      }
+    }
+  }
+
+  if (debug)
+    printf("cleaned: %s\n", cleaned);
+
   strcpy(str, cleaned);
 }
