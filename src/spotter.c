@@ -42,3 +42,10 @@ void clean(char *str)
 
   strcpy(str, cleaned);
 }
+
+int compare(char *str1, char *str2)
+{
+  if (!strcmp(str1, str2))
+    return 0;
+  return -1;
+}

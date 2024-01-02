@@ -28,5 +28,11 @@ int main(void)
     printf("s2: %s\n", s2);
   }
 
+  int result = compare(s1, s2);
+  if (!result)
+    printf("anagram\n");
+  else
+    printf("not an anagram\n");
+
   return 0;
 }

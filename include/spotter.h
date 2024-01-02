@@ -6,6 +6,7 @@
 #ifndef SPOTTER_H
 #define SPOTTER_H
 
-void clean(char *str);
+void clean(char* str);
+int compare(char* str1, char* str2);
 
 #endif
